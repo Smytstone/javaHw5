@@ -4,12 +4,12 @@ public class vacationCalcService {
         int money = 0;
         int vacationMonths = 0;
         for (int i = 1; i < 12; i++) {
-            money = money + income - expence;
             if (money >= threshold) {
                 money = (money - expence) / 3;
                 vacationMonths += 1;
-                i += 1;
+                continue;
             }
+            money = money + income - expence;
         }
         return vacationMonths;
 
